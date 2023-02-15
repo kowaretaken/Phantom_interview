@@ -1,0 +1,228 @@
+@use 'sass:map';
+@import '../../../../styles/mixins.scss';
+
+$gradient-standard: map.get($gradient, 'standard');
+$gradient-hover: map.get($gradient, 'hover-dark');
+$gradient-light: map.get($gradient, 'light');
+$primary-text: map.get($text-line, 'light-grey');
+$hover-text: black;
+$background: #1b313b;
+$blue: #7befff;
+$disable-text: #7e8d97;
+$disable-background: rgba(13, 23, 24, 0.55);
+$error-background: map.get($warning, 'error');
+
+/* copy button and view on explorer*/
+.btn-outline-white {
+  border: 2px solid hsla(223, 10%, 52%, 1);
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.btn-outline-white:hover {
+  transition: 0.25s;
+}
+
+.btn {
+  font-family: 'Poppins' !important;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 8px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    box-shadow: map.get($effect-styles, 'dark');
+  }
+
+  &.btn-full {
+    width: 100%;
+  }
+
+  &.btn-xs::after {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 4px;
+  }
+
+  &.btn-sm::after {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px;
+  }
+
+  &.btn-md::after {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 8px 16px;
+  }
+
+  &.btn-df::after {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 12px 16px;
+  }
+
+  &.btn-lg::after {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    padding: 12px 24px;
+  }
+
+
+  &.disabled {
+    color: map.get($text-line, 'grey');
+    background: map.get($miscellaneous, 'strategy-hover');
+    pointer-events: none;
+  }
+}
+
+/* outline */
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  left: 1.5px;
+  right: 1.5px;
+  top: 1.5px;
+  bottom: 1.5px;
+  border-radius: 8px;
+  z-index: -1;
+  transition: 200ms;
+}
+
+.btn-outline::after {
+  content: attr(text);
+  font-family: 'Poppins' !important;
+  color: transparent;
+  transition: 200ms;
+}
+
+.btn-outline:hover::before {
+  opacity: 0%;
+}
+
+/* contained */
+.btn-contained {
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-contained::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 8px;
+  z-index: -1;
+  transition: 200ms;
+}
+
+.btn-contained::after {
+  content: attr(text);
+}
+
+.btn-contained:hover::before {
+  opacity: 0.8;
+  transition: 200ms;
+}
+
+/* text */
+.btn-text,
+.btn-text::before {
+  background: transparent;
+}
+
+.btn-text::after {
+  content: attr(text);
+  color: $primary-text;
+  transition: 200ms;
+  text-decoration: underline;
+}
+
+.btn-text:hover::after {
+  color: $blue;
+}
+
+/* info */
+.btn-info::before {
+  content: '';
+  position: absolute;
+  left: 1.5px;
+  right: 1.5px;
+  top: 1.5px;
+  bottom: 1.5px;
+  border-radius: 8px;
+  z-index: -1;
+  transition: 200ms;
+}
+
+.btn-info::after {
+  content: attr(text);
+  color: transparent;
+  transition: 200ms;
+}
+
+.btn-info:hover::before {
+  opacity: 0%;
+}
+
+/* error */
+
+.btn-error {
+  cursor: not-allowed;
+}
+
+.btn-error::before {
+  content: '';
+  position: absolute;
+  left: 1.5px;
+  right: 1.5px;
+  top: 1.5px;
+  bottom: 1.5px;
+  border-radius: 8px;
+  background-color: $disable-background;
+  z-index: -1;
+  transition: 200ms;
+}
+
+.btn-error::after {
+  content: attr(text);
+  color: transparent;
+  transition: 200ms;
+}
+
+/* disabled */
+.disabled::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 8px;
+  z-index: -1;
+  transition: 200ms;
+}
+
+.disabled::after {
+  content: attr(text);
+  background: $disable-text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms;
+}

@@ -1,0 +1,53 @@
+.tooltip {}
+
+.tooltip svg {
+  fill: #777e90;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip {
+  font-family: Poppins !important;
+  padding: .5rem;
+  background-color: #2D2B40;
+  opacity: 0.75;
+  color: #FFFFFF;
+  font-size: 11px;
+  white-space: pre-line;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip {
+  font-size: 12px;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip table {
+  margin-left: -1px;
+  width: 102%;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip table td:last-child {
+  text-align: right;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip caption {
+  font-size: 11px;
+  width: max-content;
+  color: #FFFFFF;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip .sub {
+  color: #B1B5C3;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip ol.subtext {
+  margin: 0;
+  padding-inline-start: 0.8rem;
+  font-size: 11px;
+  color: #B1B5C3;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip li {
+  padding-block-end: 0.5rem;
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip .tableAssetsTooltip li:last-child {
+  padding-block-end: 0rem;
+}
